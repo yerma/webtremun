@@ -5,7 +5,7 @@
 }
 
 html, body, section {
-    height: 100vh;
+    min-height: 100vh;
 }
 body {
     margin: 0;
@@ -83,7 +83,6 @@ nav.navbar {
 nav.navbar.affix {
     top: 0;
     background: rgba(255,255,255,0.9);
-/*    box-shadow: 0 1px 1px rgba(153,153,153,0.5);*/
 }
 
 #inicio {
@@ -152,17 +151,18 @@ nav.navbar,
     margin-left: -60px;
 }
 
-#inicio .horizontal-img:hover a {
+.no-touch #inicio .horizontal-img:hover a {
     left: 0;
 }
 
-#inicio .horizontal-img:hover img {
+.no-touch #inicio .horizontal-img:hover img {
     left: 55%;
 }
 
 /*** Nosotros ***/
 
-#nosotros .container {
+#nosotros .container,
+#contacto .container {
     width: 75%;
 }
 
@@ -173,6 +173,7 @@ nav.navbar,
 #nosotros figure {
     overflow: hidden;
     position: relative;
+    height: 300px;
     min-height: 50vh;
 }
 
@@ -210,6 +211,7 @@ nav.navbar,
 #productos .row > div {
     height: 40vh;
     border: 1px solid #FFF;
+    overflow: hidden;
 }
 
 #productos .row > div:first-child {
@@ -217,45 +219,208 @@ nav.navbar,
 }
 
 
-
-
-
-
-
-
-
-
+/*** Contacto ***/
+#contacto {
+    min-height: auto;
+    padding-bottom: 40px;
+}
 
 /*** Footer ***/
-footer .row div {
-    margin-top: 8px;
+
+footer {
+    background: rgb(100,100,100);
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 200;
+    padding-top: 20px;
+}
+
+footer .col-* *{
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+footer .row div:first-child {
+    text-align: center;
+}
+
+footer img {
+    max-width: 200px;
+    width: 100%;
 }
 
 footer .rrss {
-    background: rgb(153,153,153);
-    color: #FFF;
-    font-size: 16px;
-    font-weight: 200;
+    text-align: center;
 }
 
-footer .rrss ul {
+footer ul {
     list-style: none;
 }
 
-footer .rrss i {
-    text-align: center;
-    width: 25px;
-}
-
 footer .copyright {
-    background: #14adb8;
-    padding: 5px;
+    margin-top: 10px;
+    padding: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     color: #FFF;
+    border-top: 1px solid rgb(20,173,184);
+}
+
+footer a.facebook:before {
+    content: "\f09a";
+}
+
+footer a.twitter:before {
+    content: "\f099";
+}
+
+footer a.youtube:before {
+    content: "\f16a";
+}
+
+
+footer .rrss a {
+    box-shadow: 0 0 0 2px rgba(20,173,184,1);
+    overflow: hidden;
+    -webkit-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    -moz-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+
+    display: inline-block;
+    cursor: pointer;
+    margin: 15px 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    font-family: 'FontAwesome';
+}
+
+footer .rrss a:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+
+    display: none;
+}
+
+footer .rrss a:before {
+    speak: none;
+    font-size: 20px;
+    line-height: 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}
+
+footer .rrss a:hover {
+    background: rgba(20,173,184,1);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+    text-decoration: none;
+}
+
+
+footer .rrss a:hover:before {
+    -webkit-animation: toTopFromBottom 0.3s forwards;
+    -moz-animation: toTopFromBottom 0.3s forwards;
+    animation: toTopFromBottom 0.3s forwards;
+}
+
+@-webkit-keyframes toTopFromBottom {
+    49% {
+        -webkit-transform: translateY(-100%);
+    }
+    50% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes toTopFromBottom {
+    49% {
+        -moz-transform: translateY(-100%);
+    }
+    50% {
+        opacity: 0;
+        -moz-transform: translateY(100%);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+@keyframes toTopFromBottom {
+    49% {
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    51% {
+        opacity: 1;
+    }
 }
 
 
 
+@media screen and (max-width: 576px) {
+    nav.navbar.affix {
+        background: rgba(255,255,255,1);
+        box-shadow: 1px 1px 5px rgba(150,150,150,0.3);
+    }
 
+    #inicio .marca {
+        height: 40vh;
+    }
 
+    #inicio .marca img {
+        width: 80%;
+    }
+
+    #inicio .horizontal-img {
+        height: 18vh;
+        left: 0;
+    }
+
+    #inicio .horizontal-img:nth-child(odd) {
+        margin-left: inherit;
+    }
+
+    #inicio .horizontal-img:nth-child(even) a{
+        margin-left: 40%;
+    }
+
+    #inicio .horizontal-img a {
+        text-decoration: none;
+        position: absolute;
+        display: block;
+        z-index: 999;
+        height: 100%;
+        width: 60%;
+        background: rgba(20,173,184,.7);
+        color: #FFFFFF;
+        font-size: 24px;
+        text-align: center;
+        line-height: 18vh;
+        left: 0;
+    }
+
+    #nosotros .container,
+    #contacto .container {
+        width: 90%;
+    }
+}
