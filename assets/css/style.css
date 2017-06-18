@@ -19,6 +19,10 @@ section:not(#inicio) {
     padding-top: 60px;
 }
 
+section:focus {
+    outline: none;
+}
+
 header {
     position: absolute;
     width: 100%;
@@ -225,6 +229,10 @@ nav.navbar,
     padding-bottom: 40px;
 }
 
+#contacto textarea {
+    resize: none;
+}
+
 /*** Footer ***/
 
 footer {
@@ -394,6 +402,7 @@ footer .rrss a:hover:before {
     #inicio .horizontal-img {
         height: 18vh;
         left: 0;
+        border: none;
     }
 
     #inicio .horizontal-img:nth-child(odd) {

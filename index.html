@@ -23,7 +23,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#"><img src="assets/img/logo-reducido.svg" alt=""></a>
+                <a class="navbar-brand" href="#inicio"><img src="assets/img/logo-reducido.svg" alt=""></a>
             </div>
             <div class="collapse navbar-collapse navbar-right" id="main-nav">
                 <ul class="nav navbar-nav">
@@ -186,7 +186,6 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 <script>
-    /*todo: validacion de formulario */
 
     if (("ontouchstart" in document.documentElement)) {
         document.documentElement.className += " touch-device";
@@ -194,12 +193,16 @@
         document.documentElement.className += " no-touch";
     }
 
+
+
     // Select all links with hashes
     $('a[href*="#"]')
     // Remove links that don't actually link to anything
         .not('[href="#"]')
-        .not('[href="#0"]')
         .click(function(event) {
+            if(this.hash == '#inicio') {
+                document.querySelector('#main-nav').classList.remove('in');
+            }
             // On-page links
             if (
                 location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
@@ -220,15 +223,16 @@
                         // Must change focus!
                         var $target = $(target);
                         $target.focus();
-                        if ($target.is(":focus")) { // Checking if the target was focused
+                        if ($target.is(":focus")) {
                             return false;
                         } else {
-                            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                            $target.attr('tabindex','-1');
                             $target.focus(); // Set focus again
-                        };
+                        }
                     });
                 }
             }
+
         });
 </script>
 </body>
