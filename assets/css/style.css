@@ -6,6 +6,8 @@
 
 html, body, section {
     min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 body {
     margin: 0;
@@ -31,8 +33,8 @@ header {
 }
 
 .col:not(:first-child,:last-child) {
-    padding-right:7px;
-    padding-left:7px;
+    padding-right: 7px !important;
+    padding-left: 7px !important;
 }
 
 h2 {
@@ -215,13 +217,32 @@ nav.navbar,
 #productos .row > div {
     height: 40vh;
     border: 1px solid #FFF;
-    overflow: hidden;
+    padding: 0;
 }
 
 #productos .row > div:first-child {
     padding: 50px 20px;
 }
 
+#productos figure {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#productos figure img {
+    position: absolute;
+    min-width: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 
 /*** Contacto ***/
 #contacto {
@@ -240,12 +261,12 @@ footer {
     color: #FFF;
     font-size: 18px;
     font-weight: 200;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 footer .col-* *{
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 footer .row div:first-child {
@@ -266,7 +287,7 @@ footer ul {
 }
 
 footer .copyright {
-    margin-top: 10px;
+    margin-top: 0;
     padding: 10px;
     text-align: center;
     font-size: 14px;
