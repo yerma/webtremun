@@ -204,9 +204,37 @@ nav.navbar,
     transform: translate(-50%, -50%);
 }
 
-#nosotros figcaption {
+#nosotros figure figcaption {
     position: absolute;
     z-index: 999;
+    background: rgba(20,173,184,0.8);
+    color: #FFF;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+#nosotros .row div:nth-child(odd) figcaption {
+    top: -100%;
+}
+
+#nosotros .row div:nth-child(even) figcaption {
+    bottom: -100%;
+}
+
+#nosotros .row div:nth-child(odd):hover figcaption {
+    top: 0;
+    opacity: 1;
+}
+
+#nosotros .row div:nth-child(even):hover figcaption {
+    bottom: 0;
+    opacity: 1;
 }
 
 /*** Productos ***/
@@ -215,7 +243,7 @@ nav.navbar,
 }
 
 #productos .row > div {
-    height: 40vh;
+    height: 80vh;
     border: 1px solid #FFF;
     padding: 0;
 }
@@ -233,8 +261,8 @@ nav.navbar,
 
 #productos figure img {
     position: absolute;
-    min-width: 100%;
-    width: 100%;
+    min-height: 100%;
+    height: 100%;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
