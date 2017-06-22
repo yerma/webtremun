@@ -28,7 +28,7 @@ section:focus {
 header {
     position: absolute;
     width: 100%;
-    z-index: 9999;
+    z-index: 9000;
     padding: 0;
 }
 
@@ -115,7 +115,30 @@ nav.navbar.affix {
     margin: 1.6vh 0;
     overflow: hidden;
     position: relative;
-    border-left: 10px solid rgb(20,173,184);
+}
+
+#inicio .horizontal-img:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 1000;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15vh 0 15vh 45px;
+    border-color: transparent transparent transparent #FFF;
+}
+
+#inicio .horizontal-img:after {
+    content: "\232A";
+    position: absolute;
+    left: 0;
+    z-index: 1001;
+    width: 20px;
+    height: 100%;
+    color: rgb(153,153,153);
+    line-height: 32vh;
+    font-size: 50px;
 }
 
 nav.navbar,
@@ -176,20 +199,28 @@ nav.navbar,
     margin-top: 50px;
 }
 
+#nosotros .row div {
+    margin-bottom: 40px;
+}
+
 #nosotros figure {
     overflow: hidden;
     position: relative;
     height: 300px;
-    min-height: 50vh;
+    min-height: 40vh;
+    margin: 0;
 }
 
-#nosotros .row div:nth-child(even) figure {
-    margin-top: 60px;
-    border-bottom: 10px solid rgb(20,173,184);
+#nosotros h4 {
+    padding: 10px 0;
+    text-align: center;
+}
+#nosotros .row div:nth-child(odd) h4 {
+    border-top: 5px solid rgb(20,173,184);
 }
 
-#nosotros .row div:nth-child(odd) figure {
-    border-top: 10px solid rgb(20,173,184);
+#nosotros .row div:nth-child(even) h4 {
+    border-bottom: 5px solid rgb(20,173,184);
 }
 
 #nosotros figure img {
@@ -243,26 +274,18 @@ nav.navbar,
 }
 
 #productos .row > div {
-    height: 80vh;
-    border: 1px solid #FFF;
-    padding: 0;
-}
-
-#productos .row > div:first-child {
-    padding: 50px 20px;
+    margin-bottom: 40px;
 }
 
 #productos figure {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    height: 50vh;
 }
 
 #productos figure img {
     position: absolute;
-    min-height: 100%;
-    height: 100%;
+    width: 110%;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -270,11 +293,81 @@ nav.navbar,
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+#productos figure:hover img {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+#productos .left-half h4 {
+    position: absolute;
+    z-index: 999;
+    background: rgba(255,255,255,1);
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    left: 0;
+}
+
+#productos .left-half a h4 {
+    color: rgb(153,153,153);
+}
+
+#productos .left-half .row figure:nth-child(odd) h4 {
+    bottom: 0;
+    border-bottom: 5px solid rgb(20,173,184);
+}
+
+#productos .left-half .row figure:nth-child(even) h4 {
+    border-top: 5px solid rgb(20,173,184);
+}
+
+#productos .right-half {
+    text-align: right;
+}
+
+#productos .right-half figure {
+    height: 40vh;
+}
+
+#productos .right-half a {
+    border: 2px solid rgb(20,173,184);
+    padding: 10px 20px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#productos .right-half a:hover,
+#productos .right-half a:focus,
+#productos .right-half a:active {
+    background: rgb(20,173,184);
+    color: #FFF;
+    text-decoration: none;
+}
+
+#productos .modal {
+    z-index: 9999;
+}
+
+#productos .modal-dialog {
+    width: 90%;
+    min-height: 90vh;
+}
+
+#productos .modal-content {
+    height: 90vh;
 }
 
 /*** Contacto ***/
 #contacto {
-    min-height: auto;
+    min-height: unset;
     padding-bottom: 40px;
 }
 
