@@ -137,7 +137,7 @@ nav.navbar.affix {
     width: 20px;
     height: 100%;
     color: rgb(153,153,153);
-    line-height: 32vh;
+    line-height: 29vh;
     font-size: 50px;
 }
 
@@ -411,7 +411,7 @@ nav.navbar,
 
 /*** Contacto ***/
 #contacto {
-    min-height: unset;
+    min-height: 50vh;
     padding-bottom: 40px;
 }
 
