@@ -240,7 +240,7 @@ nav.navbar,
     z-index: 999;
     background: rgba(20,173,184,0.8);
     color: #FFF;
-    padding: 20px;
+    padding: 15px;
     height: 100%;
     width: 100%;
     -webkit-transition: all 0.4s ease-in-out;
@@ -315,6 +315,11 @@ nav.navbar,
     padding: 10px;
     left: 0;
 }
+#productos .left-half a {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
 
 #productos .left-half a h4 {
     color: rgb(153,153,153);
@@ -357,12 +362,51 @@ nav.navbar,
 }
 
 #productos .modal-dialog {
-    width: 90%;
+    width: 80%;
     min-height: 90vh;
 }
 
 #productos .modal-content {
     height: 90vh;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+#productos .modal-header {
+    background: rgb(20,173,184);
+    color: #FFF;
+    font-size: 20px;
+    border: none;
+}
+
+#productos .modal-header button {
+    color: #FFF;
+    font-size: 50px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    line-height: 10px;
+}
+
+#productos .modal-dialog .row {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#productos .modal-dialog figure {
+    overflow: hidden;
+    height: 100%;
+}
+
+#productos .modal-dialog img {
+    width: 120%;
+    min-width: 100%;
+    filter: none;
+}
+
+#productos .modal-dialog .descripcion {
+    padding-top: 30px;
 }
 
 /*** Contacto ***/
