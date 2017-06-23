@@ -4,6 +4,10 @@
     -moz-box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;
+}
+
 html, body, section {
     min-height: 100vh;
     max-width: 100%;
@@ -625,6 +629,10 @@ footer .rrss a:hover:before {
         width: 90%;
     }
 
+    #nosotros figure figcaption {
+        font-size: 15px;
+    }
+
 
     #productos .modal {
         z-index: 9999;
@@ -632,12 +640,16 @@ footer .rrss a:hover:before {
 
     #productos .modal-dialog {
         width: 95%;
-        min-height: 90vh;
     }
 
     #productos .modal-dialog figure {
-        overflow: hidden;
         height: 40vh;
+    }
+
+    #productos .modal-content {
+        height: 95vh;
+        border-radius: 0;
+        overflow-y: scroll;
     }
 
 }
