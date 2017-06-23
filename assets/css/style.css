@@ -643,7 +643,7 @@ footer .rrss a:hover:before {
     }
 
     #productos .modal-content {
-        height: 90vh;
+        height: 95vh;
         border-radius: 0;
         overflow-y: scroll;
     }
