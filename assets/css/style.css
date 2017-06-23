@@ -117,28 +117,30 @@ nav.navbar.affix {
     position: relative;
 }
 
-#inicio .horizontal-img:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    z-index: 1000;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 15vh 0 15vh 45px;
-    border-color: transparent transparent transparent #FFF;
-}
+@media screen and (min-width: 576px){
+    #inicio .horizontal-img:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        z-index: 1000;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15vh 0 15vh 45px;
+        border-color: transparent transparent transparent #FFF;
+    }
 
-#inicio .horizontal-img:after {
-    content: "\232A";
-    position: absolute;
-    left: 0;
-    z-index: 1001;
-    width: 20px;
-    height: 100%;
-    color: rgb(153,153,153);
-    line-height: 29vh;
-    font-size: 50px;
+    #inicio .horizontal-img:after {
+        content: "\232A";
+        position: absolute;
+        left: 0;
+        z-index: 1001;
+        width: 20px;
+        height: 100%;
+        color: rgb(153,153,153);
+        line-height: 29vh;
+        font-size: 50px;
+    }
 }
 
 nav.navbar,
@@ -319,6 +321,9 @@ nav.navbar,
     height: 100%;
     width: 100%;
     display: block;
+}
+#productos .left-half a:focus {
+    outline: none;
 }
 
 #productos .left-half a h4 {
@@ -615,7 +620,24 @@ footer .rrss a:hover:before {
     }
 
     #nosotros .container,
-    #contacto .container {
+    #contacto .container,
+    #productos .container{
         width: 90%;
     }
+
+
+    #productos .modal {
+        z-index: 9999;
+    }
+
+    #productos .modal-dialog {
+        width: 95%;
+        min-height: 90vh;
+    }
+
+    #productos .modal-dialog figure {
+        overflow: hidden;
+        height: 40vh;
+    }
+
 }
